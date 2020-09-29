@@ -39,8 +39,8 @@ public class ToDoControllerTest {
 
         when(toDoService.findAll()).thenReturn(toDoList);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/todos")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/todoService/todos")
             .contentType(MediaType.APPLICATION_JSON)
-        ).andExpect(jsonPath("$",hasSize(2))).andDo(print());
+        ).andExpect(jsonPath("$",hasSize(3))).andDo(print());
     }
 }
