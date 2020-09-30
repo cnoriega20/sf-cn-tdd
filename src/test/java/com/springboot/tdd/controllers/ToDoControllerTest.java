@@ -37,7 +37,7 @@ public class ToDoControllerTest {
         toDoList.add(new ToDo(2L, "Start TypeScript Course", true));
         toDoList.add(new ToDo(3L, "Fork Destructuring Monolith Project", true));
 
-        when(toDoService.findAll()).thenReturn(toDoList);
+        when(toDoService.getAllTodos()).thenReturn(toDoList);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/todoService/todos")
             .contentType(MediaType.APPLICATION_JSON)

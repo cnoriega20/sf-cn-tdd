@@ -20,6 +20,6 @@ public class ToDoController {
 
     @GetMapping("/todos")
     ResponseEntity<List<ToDo>> getAllTodoItems(){
-        return new ResponseEntity<>(toDoService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(toDoService.getAllTodos(), HttpStatus.OK);
     }
 }

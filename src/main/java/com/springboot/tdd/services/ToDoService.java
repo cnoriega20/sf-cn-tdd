@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ToDoService {
 
-    List<ToDo> findAll();
+    List<ToDo> getAllTodos();
 }

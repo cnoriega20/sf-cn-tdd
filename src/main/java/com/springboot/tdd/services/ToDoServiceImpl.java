@@ -10,7 +10,7 @@ import java.util.List;
 public class ToDoServiceImpl implements ToDoService {
 
     @Override
-    public List<ToDo> findAll() {
+    public List<ToDo> getAllTodos() {
         return new ArrayList<>();
     }
 }
