@@ -7,4 +7,7 @@ import java.util.List;
 public interface ToDoService {
 
     List<ToDo> getAllTodos();
+
+    ToDo save(ToDo todo);
+
 }
