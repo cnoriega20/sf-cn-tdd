@@ -51,21 +51,6 @@ class ToDoServiceTest {
         assertSame(otherTodos, toDos);
     }
 
-    /*@Test
-    void testGetAllTodoWithData(){
-         ToDo firstTodo = ToDo.builder()
-                .id(1L)
-                .text("Continue with Steven's TypeScript course")
-                .completed(true)
-                .build();
-        toDoRepository.save(firstTodo);
-
-        ToDo firstExpectedTodo = toDoService.getAllTodos().get(0);
-
-        assertEquals(firstTodo.getText(), firstExpectedTodo.getText());
-        assertEquals(firstTodo.isCompleted(), firstExpectedTodo.isCompleted());
-        assertEquals(firstTodo.getId(), firstExpectedTodo.getId());
-    }*/
 
     /**
      * Change: mark TodoRepository to @Autowire
@@ -98,7 +83,18 @@ class ToDoServiceTest {
         assertEquals(toDos.get(0).getText(), firstElement.getText());
         assertEquals(toDos.get(0).isCompleted(),firstElement.isCompleted());
         assertEquals(toDos.get(0).getId(),firstElement.getId());
+    }
 
+    @Test
+    void testSave(){
+       ToDo todo = ToDo.builder()
+                .id(1L)
+                .text("Continue with Steven's TypeScript course")
+                .completed(true)
+                .build();
+
+       toDoService.save(todo);
+       assertEquals(1, toDoRepository.count());
 
     }
 }
